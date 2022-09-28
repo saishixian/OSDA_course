@@ -91,7 +91,7 @@ the set of training examples $X_{train} \subseteq 2^M$ and the labels $y_x \in \
 corresponding to each $x \in X_{train}$.
 
 First, we split all examples $X_{train}$ to positive $X_{pos}$ and negative $X_{neg}$ examples:
-$$X_{pos} = \\{x \in X_{train} \mid y_x \textrm{ is True} \\}, \quad X_{neg} = X \setminus X_{pos}$$.
+$$X_{pos} = \\{x \in X_{train} \mid y_x \textrm{ is True} \\}, \quad X_{neg} = X \setminus X_{pos}.$$
 
 To classify the descriptions $x$ we follow the procedure:
 1) Count the number of counterexamples for positive examples \
