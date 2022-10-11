@@ -10,12 +10,12 @@ _And the last year's [page](https://www.hse.ru/en/ma/datasci/courses/470889822.h
 _**NB: More information to come**_
 
 Students of the course are to submit _one_ of the tree Big home assignments:
-1. **Survey** on papers in the course relevant field
-2. **Lazy FCA** (see the respective [directory](https://github.com/EgorDudyrev/OSDA_course/tree/Autumn_2022/lazy_fca))\
-Previous years student works can be found throughout GitHub. For example, consider
-the branch of [Autumn_2015](https://github.com/EgorDudyrev/OSDA_course/tree/Autumn_2015)
+1. **Survey** on papers in the course relevant field \
+  More info in the telegram channel of the course
+2. **Lazy FCA** \
+ See the respective directory [lazy_fca](https://github.com/EgorDudyrev/OSDA_course/tree/Autumn_2022/lazy_fca)
 3. **Neural FCA**\
-_\<More information TBA\>_
+ See the respective directory [neural_fca](https://github.com/EgorDudyrev/OSDA_course/tree/Autumn_2022/neural_fca)
 
 # Evaluation
 
