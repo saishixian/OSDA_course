@@ -39,7 +39,7 @@ Please, create a new notebook and a new pipeline similar to that of
 [LazyFCA](https://github.com/EgorDudyrev/OSDA_course/blob/Autumn_2022/lazy_fca) homework.
 
 You can consult [neural_lib.py](https://github.com/EgorDudyrev/OSDA_course/blob/Autumn_2022/neural_fca/neural_lib.py)
-and [NeuralFCA.ipynb](https://github.com/EgorDudyrev/OSDA_course/blob/Autumn_2022/neural_fca/NeuralFCA.py) 
+and [NeuralFCA.ipynb](https://github.com/EgorDudyrev/OSDA_course/blob/Autumn_2022/neural_fca/NeuralFCA.ipynb) 
 for examples how to create, fit and visualize your network.
 
 A pdf report should describe the reasoning behind every step of your homework. For example,
