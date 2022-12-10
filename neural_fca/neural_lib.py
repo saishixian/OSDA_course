@@ -16,8 +16,14 @@ class DisjunctiveNeuron:
     intent: FrozenSet[str]
     level: int
 
+    def __eq__(self, other: 'DisjunctiveNeuron'):
+        return self.intent == other.intent and self.level == other.level
+
+    def __lt__(self, other: 'DisjunctiveNeuron'):
+        return self.intent & other.intent == other.intent and self.level > other.level
+
     def __le__(self, other: 'DisjunctiveNeuron'):
-        return (self.intent & other.intent == other.intent) and self.level >= other.level
+        return self < other or self == other
 
     def __hash__(self):
         return hash((self.intent, self.level))
@@ -76,7 +82,8 @@ class ConceptNetwork:
     def fit(
             self,
             X_df: 'pd.DataFrame[bool]', y: 'pd.Series[bool]',
-            loss_fn=torch.nn.CrossEntropyLoss(), nonlinearity=torch.nn.ReLU
+            loss_fn=torch.nn.CrossEntropyLoss(), nonlinearity=torch.nn.ReLU,
+            n_epochs: int = 2000
     ):
         X = torch.tensor(X_df[list(self.attributes)].values).float()
         y = torch.tensor(y.values).long()
@@ -85,7 +92,7 @@ class ConceptNetwork:
 
         optimizer = torch.optim.Adam(self.network.parameters())
 
-        for t in range(2000):
+        for t in range(n_epochs):
             optimizer.zero_grad()
             y_pred = self.network(X)
             loss = loss_fn(y_pred, y)
@@ -159,8 +166,8 @@ class ConceptNetwork:
         for layer_i, layer in enumerate(nodes_per_levels[1:]):
             layer_i += 1
             prev_layer = nodes_per_levels[layer_i - 1]
-            layer_con = [(layer.index(node), prev_layer.index(child))
-                         for node in layer for child in poset.parents(node)]
+            layer_con = [(layer.index(node), prev_layer.index(parent))
+                         for node in layer for parent in poset.parents(node)]
             connectivities.append(layer_con)
 
         linear_layers = []
